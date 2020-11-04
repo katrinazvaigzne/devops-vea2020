@@ -7,11 +7,17 @@ pipeline {
     }
     stages {
         stage('Build') {
+            environment {
+                HOME="."
+            }
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
+            environment {
+                HOME="."
+            }
             steps {
                 sh 'mvn test'
             }
