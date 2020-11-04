@@ -1,9 +1,7 @@
 package hello;
-
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+import org.junit.internal.matchers.StringContains;
 
 public class GreeterTest {
 
@@ -11,7 +9,7 @@ public class GreeterTest {
 
     @Test
     public void greeterSaysHello() {
-        assertThat(greeter.sayHello(), containsString("Hello"));
+        assertThat(greeter.sayHello(), StringContains.containsString("Hello"));
     }
 
 }
